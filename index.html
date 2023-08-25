@@ -40,12 +40,66 @@
                 </a>
               </li>
               <li class="user-navigation-item">
-                <a class=" user-navigation-link shopping-cart" href="#">
+                <a class="user-navigation-link shopping-cart" href="#">
                   Корзина
                 </a>
                 <span class="shopping-cart-counter">
                   2
                 </span>
+                <!-- Поповер открывается через консоль разработчика -->
+                <div class="popover popover-cart popover-cart-open">
+                  <div class="popover-content">
+                    <ul class="popover-cart-list">
+                      <li class="popover-cart-item">
+                        <a class="popover-cart-link" href="#">
+                          <div class="popover-cart-image-wrapper">
+                            <img class="" src="images/2-main/popover-image-1.png" width="39" height="43" alt="">
+                          </div>
+                          <p class="popover-cart-subtitle">
+                            Любительская селфи-палка
+                          </p>
+                        </a>
+                        <button class="popover-cart-delate-button" type="button">
+                          <span class="visually-hidden">
+                            Удалить товар из карзины.
+                          </span>
+                        </button>
+                      </li>
+                      <li class="popover-cart-item">
+                        <a class="popover-cart-link" href="#">
+                          <div class="popover-cart-image-wrapper">
+                            <img class="" src="images/2-main/popover-image-2.png" width="39" height="43" alt="">
+                          </div>
+                          <p class="popover-cart-subtitle">
+                            Профессиональная селфи-палка
+                          </p>
+                        </a>
+                        <button class="popover-cart-delate-button" type="button">
+                          <span class="visually-hidden">
+                            Удалить товар из карзины.
+                          </span>
+                        </button>
+                      </li>
+                    </ul>
+                    <div class="popver-cart-info-wrapper">
+                      <p class="popver-cart-product">
+                        Товаров:
+                        <span class="popver-cart-product-counter">
+                          2
+                        </span>
+                      </p>
+                      <p class="popover-cart-price">
+                        Сумма:
+                        <span class="popover-cart-price-counter">
+                          2000 ₽
+                        </span>
+                      </p>
+                    </div>
+                    <a class="popover-open-cart-button" href="#">
+                      Открыть корзину
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </nav>
@@ -296,7 +350,7 @@
         <div class="services-wrapper">
           <ul class="services-title-list">
             <li class="services-title-item">
-              <button class="button services-button service-button-current" type="button">
+              <button class="services-button service-button-current" type="button">
                 Доставка
               </button>
             </li>
@@ -487,5 +541,70 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-delivery">
+        <section class="modal-content">
+          <h2 class="modal-title">
+            Доставка под заказ
+          </h2>
+          <button class="modal-close-button">
+            <span class="visually-hidden">
+              Закрыть.
+            </span>
+          </button>
+          <form class="delivery-form" action="" method="post">
+            <div class="field-group user-name-form">
+              <label class="delivery-user-name-label" for="user-name-input">
+                Ваше имя:
+              </label>
+              <input class="delivery-user-name-input" type="text" placeholder="Введите имя" name="user-name-input" id="user-name-input" required>
+            </div>
+            <div class="field-group user-email-form">
+              <label class="delivery-user-email-label" for="user-email-input">
+                Ваш e-mail:
+              </label>
+              <input class="delivery-user-email-input" type="text" placeholder="почта" name="user-email-input" id="user-email-input" required>
+              <span class="user-email-error-title">
+                Забавный у вас адрес
+              </span>
+            </div>
+            <div class="field-group user-delivery-form">
+              <label class="delivery-user-item-label" for="user-item-input">
+                Что нужно привезти:
+              </label>
+              <input class="user-delivery-item-input" type="text" placeholder="В свободной форме" name="user-item-input" id="user-item-input" required>
+            </div>
+            <div class="field-group delivery-item-control">
+              <div class="delivery-item-control-label">
+                <label class="item-control-label" for="item-control-count">
+                  Количество:
+                </label>
+                <div class="modal-popup">
+                  <button class="modal-popup-button" type="button">
+                    <span class="visually-hidden">
+                      Допольнительная информация.
+                    </span>
+                  </button>
+                  <div class="modal-popup-text">
+                    Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.
+                  </div>
+                </div>
+              </div>
+              <div class="item-control-wrapper">
+                <button class="item-control-minus" type="button"></button>
+                <input class="item-control-input" type="number" value="1" min="0" max="100" name="item-control-count" id="item-control-count">
+                <button class="item-control-plus" type="button"></button>
+              </div>
+            </div>
+            <button class="button delivery-form-button">
+              Отправить
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
+
+
   </body>
 </html>
