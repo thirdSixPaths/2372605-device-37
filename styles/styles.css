@@ -2241,7 +2241,7 @@ margin-bottom: 47px;
   text-decoration: none;
 }
 
-.products-catalog-item:focus-visible {
+.products-catalog-link:focus-visible {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
 }
