@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico">
   </head>
   <body>
     <header class="index-header">
@@ -42,10 +43,11 @@
               <li class="user-navigation-item">
                 <a class="user-navigation-link shopping-cart" href="#">
                   Корзина
+                  <span class="shopping-cart-counter">
+                    2
+                  </span>
                 </a>
-                <span class="shopping-cart-counter">
-                  2
-                </span>
+
                 <!-- Поповер открывается через консоль разработчика -->
                 <div class="popover popover-cart popover-cart-open">
                   <div class="popover-content">
@@ -212,7 +214,7 @@
               </div>
             </div>
             <div class="slider-content-wrapper">
-              <p class="sleder-content-title">
+              <p class="slider-content-title">
                 Порхает как бабочка, жалит как пчела!
               </p>
               <p class="slider-content-subtitle">
@@ -221,10 +223,125 @@
               <a class="button slider-about-button" href="#">
                 Подробнее
               </a>
+              <dl class="slider-characteristics-description-list">
+                <div class="slider-characteristics-description-item">
+                  <dt class="main-characteristic">
+                    800 м
+                  </dt>
+                  <dd class="main-characteristic-description">
+                    Дальность полёта
+                  </dd>
+                </div>
+                <div class="slider-characteristics-description-item">
+                  <dt class="main-characteristic">
+                    50 м
+                  </dt>
+                  <dd class="main-characteristic-description">
+                    Дальность поражения
+                  </dd>
+                </div>
+              </dl>
             </div>
           </li>
-          <li></li>
-          <li></li>
+          <li class="slider-item">
+            <h3 class="visually-hidden">
+              Фитнес-браслет.
+            </h3>
+            <div class="slider-image-wrapper">
+              <img src="images/2-main/slider-product-2.png" width="560" height="560" alt="Фотография товара: Фитнес-браслет.">
+              <div class="slider-buttons-wrapper">
+                <button class="slider-button " type="button">
+                  <span class="visually-hidden">
+                    Предыдущий слайд
+                  </span>
+                </button>
+                <button class="slider-button slider-button-next" type="button">
+                  <span class="visually-hidden">
+                    Слудующий слайд
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="slider-content-wrapper">
+              <p class="slider-content-title fitness-bracelet-title">
+                Худеем правильно!
+              </p>
+              <p class="slider-content-subtitle">
+                Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.
+              </p>
+              <a class="button slider-about-button" href="#">
+                Подробнее
+              </a>
+              <dl class="slider-characteristics-description-list">
+                <div class="slider-characteristics-description-item">
+                  <dt class="main-characteristic">
+                    48 часов
+                  </dt>
+                  <dd class="main-characteristic-description">
+                    Без подзарядки
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </li>
+          <li class="slider-item">
+            <h3 class="visually-hidden">
+              Селфи-палки.
+            </h3>
+            <div class="slider-image-wrapper">
+              <img src="images/2-main/slider-product-3.png" width="560" height="560" alt="Фотография товара: Селфи-палки.">
+              <div class="slider-buttons-wrapper">
+                <button class="slider-button " type="button">
+                  <span class="visually-hidden">
+                    Предыдущий слайд
+                  </span>
+                </button>
+                <button class="slider-button slider-button-next" type="button">
+                  <span class="visually-hidden">
+                    Слудующий слайд
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="slider-content-wrapper">
+              <p class="slider-content-title">
+                Делай селфи, как&nbsp;Бен&nbsp;Стиллер!
+              </p>
+              <p class="slider-content-subtitle">
+                Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.
+              </p>
+              <a class="button slider-about-button" href="#">
+                Подробнее
+              </a>
+              <dl class="slider-characteristics-description-list">
+                <div class="slider-characteristics-description-item">
+                  <dt class="main-characteristic">
+                    8,5 м
+                  </dt>
+                  <dd class="main-characteristic-description">
+                    Длина палки
+                  </dd>
+                </div>
+                <div class="slider-characteristics-description-item">
+                  <dt class="main-characteristic">
+                    5 кг
+                  </dt>
+                  <dd class="main-characteristic-description">
+                    Вес палки
+                  </dd>
+                </div>
+                <div class="slider-characteristics-description-item">
+                  <dt class="main-characteristic">
+                    Карбон
+                  </dt>
+                  <dd class="main-characteristic-description">
+                    Материал
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </li>
+
         </ol>
         <ol class="slider-pagination-list">
           <li class="slider-pagination-item">
@@ -349,8 +466,8 @@
         </h2>
         <div class="services-wrapper">
           <ul class="services-title-list">
-            <li class="services-title-item">
-              <button class="services-button service-button-current" type="button">
+            <li class="services-title-item service-button-current">
+              <button class="button services-button" type="button">
                 Доставка
               </button>
             </li>
@@ -374,8 +491,22 @@
                 Мы с удовольствием доставим ваш товар прямо к&nbsp;вашему подъезду совершенно бесплатно! Ведь мы&nbsp;неплохо заработаем, поднимая его на ваш этаж.
               </p>
             </li>
-            <li></li>
-            <li></li>
+            <li class="services-description-item services-description-guarantee">
+              <h3 class="services-description-title">
+                Гарантия
+              </h3>
+              <p class="services-description-subtitle">
+                Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.
+              </p>
+            </li>
+            <li class="services-description-item services-description-credit">
+              <h3 class="services-description-title">
+                Кредит
+              </h3>
+              <p class="services-description-subtitle">
+                Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.
+              </p>
+            </li>
           </ul>
         </div>
       </section>

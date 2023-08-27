@@ -50,7 +50,6 @@ body {
   font-family: "Rubik", "Arial", sans-serif;
   font-size: 18px;
   line-height: 30px;
-  color: #444444;
 }
 
 img {
@@ -590,6 +589,12 @@ img {
   position: relative;
 }
 
+.main-navigation-item:focus-within {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 10px;
+  z-index: 2;
+}
+
 .catalog {
   position: relative;
   padding: 15px 67px 15px 0;
@@ -670,6 +675,10 @@ img {
   text-decoration: none;
 }
 
+.submenu-column-link:focus-visible {
+  outline: 2px solid #AF4FFF;
+}
+
 .submenu-checkbox:checked ~ .submenu {
   display: flex;
 }
@@ -736,12 +745,17 @@ img {
 
 .slider-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 .slider-item {
+  display: none;
+}
+
+.slider-item-current {
   display: flex;
   gap: 40px;
 }
@@ -770,7 +784,7 @@ img {
   padding-top: 121px;
 }
 
-.sleder-content-title {
+.slider-content-title {
   position: relative;
   margin: 0;
   margin-bottom: 29px;
@@ -783,10 +797,15 @@ img {
   z-index: 1;
 }
 
+.fitness-bracelet-title {
+  padding-right: 72px;
+}
+
 .slider-content-subtitle {
   margin: 0;
   margin-bottom: 50px;
   padding: 0;
+  color: #444444;
 }
 
 /* Слайдер. Кнопка "Подробнее" */
@@ -797,7 +816,33 @@ img {
 
 /* Раздел с таблицей (описание характеристик товара) */
 
+.slider-characteristics-description-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+  justify-content: start;
+}
 
+.slider-characteristics-description-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main-characteristic {
+  font-size: 36px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.main-characteristic-description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 30px;
+  color: #444444;
+}
 
 /* Раздел с пагинацией слайдера */
 
@@ -902,7 +947,8 @@ img {
 }
 
 .products-categories-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   margin: 0;
   padding: 0;
   gap: 40px;
@@ -1017,29 +1063,32 @@ img {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .2em;
+  color: inherit;
   cursor: pointer;
 }
 
 .service-button-current {
-  width: 280px;
-  padding: 10px 17px;
-  background-color: #000000;
   color: #FFE17F;
-  text-align: left;
+  background-color: #000000;
   transition: padding-left .6s;
 }
 
+.service-button-current .services-button::before {
+  content: "";
+  width: 0;
+}
+
 .service-button-current:hover {
-  padding-left: 35px;
+  padding-left: 25px;
 }
 
 .service-button-current:focus-visible {
-  padding-left: 35px;
+  padding-left: 25px;
   outline: 2px solid #AF4FFF;
 }
 
 .service-button-current:active {
-  padding-left: 35px;
+  padding-left: 25px;
 }
 
 
@@ -1053,13 +1102,25 @@ img {
 }
 
 .services-description-item {
+  display: none;
   margin: 0;
   padding: 74px 0 71px 0;
 }
 
 .services-description-delivery {
-  display: block;
   background-image: url("../images/2-main/delivery-man.svg");
+  background-repeat: no-repeat;
+  background-position: right 0 top 78px;
+}
+
+.services-description-guarantee {
+  background-image: url("../images/2-main/garant.svg");
+  background-repeat: no-repeat;
+  background-position: right 0 top 78px;
+}
+
+.services-description-credit {
+  background-image: url("../images/2-main/credit.svg");
   background-repeat: no-repeat;
   background-position: right 0 top 78px;
 }
@@ -1082,6 +1143,7 @@ img {
 .services-description-subtitle {
   margin: 0;
   max-width: 500px;
+  color: #444444;
 }
 
 /* Раздел с кнопкой доставки редкого товара */
@@ -1175,7 +1237,7 @@ img {
 }
 
 .delivery-button:hover::after{
-  background-color: #668ac480;
+  background-color: #DCDCDC80;
   transition: .6s;
 }
 
@@ -1223,6 +1285,7 @@ img {
 .about-us-description {
   margin: 0;
   padding: 0 23px 0 0;
+  color: #444444;
 }
 
 .delivery-companies-list {
@@ -1294,6 +1357,7 @@ img {
 .contacts-description {
   margin: 0;
   padding: 0 34px 0 0;
+  color: #444444;
 }
 
 .contacts-address-wrapper {
@@ -1305,6 +1369,10 @@ img {
   margin-bottom: 15px;
   padding: 0;
   font-size: 24px;
+  color: #444444;
+}
+
+.contacts-address {
   color: #444444;
 }
 
@@ -1320,7 +1388,7 @@ img {
 }
 
 .working-hours-wrapper {
-
+  color: #444444;
 }
 
 .working-hours-title {
@@ -1375,6 +1443,7 @@ img {
   margin: 0;
   padding: 10px 25px 0 7px;
   max-width: 560px;
+  color: #444444;
 }
 
 /* Форма подписки */
@@ -2158,10 +2227,23 @@ margin-bottom: 47px;
   background-color: #F0F0F0CC;
 }
 
+.products-catalog-item:hover .products-catalog-link {
+  color: rgba(0, 0, 0, .6);
+}
+
+.products-catalog-item:active .products-catalog-link {
+  color: rgba(0, 0, 0, .3);
+}
+
 .products-catalog-link {
   display: block;
   color: #000000;
   text-decoration: none;
+}
+
+.products-catalog-item:focus-visible {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .product-image-wrapper {
@@ -2182,7 +2264,11 @@ margin-bottom: 47px;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -.02em;
-  max-width: 200px;
+  max-width: 205px;
+}
+
+.amateur-selfie-stick {
+  padding-right: 5px;
 }
 
 .product-price {
@@ -2336,6 +2422,7 @@ margin-bottom: 47px;
   padding: 62px 70px;
   border: 10px solid #000000;
   background-color: #FFFFFF;
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, .1);
 }
 
 .modal-delivery {
@@ -2432,6 +2519,9 @@ margin-bottom: 47px;
   line-height: 20px;
   border: none;
   background-color: #F0F0F0;
+  background-image: url("../images/2-main/modal-user-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
   transition: background-color .4s;
 }
 
@@ -2470,6 +2560,9 @@ margin-bottom: 47px;
   line-height: 20px;
   border: none;
   background-color: #F0F0F0;
+  background-image: url("../images/2-main/modal-mail-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
   transition: background-color .4s;
 }
 
@@ -2578,8 +2671,6 @@ margin-bottom: 47px;
   outline: 2px solid #AF4FFF;
 }
 
-
-
 .modal-popup-text {
   display: none;
   position: absolute;
@@ -2591,6 +2682,7 @@ margin-bottom: 47px;
   line-height: 20px;
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, .1);
   z-index: 1;
 }
 
@@ -2604,6 +2696,16 @@ margin-bottom: 47px;
   transform: translateX(50%);
   border: 14px solid transparent;
   border-bottom: 14px solid #000000;
+}
+
+.modal-popup-text::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 200px;
+  height: 10px;
+  background-color: transparent;
 }
 
 .modal-popup-button:hover + .modal-popup-text {
